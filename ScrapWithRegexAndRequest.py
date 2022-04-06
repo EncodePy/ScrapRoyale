@@ -35,7 +35,6 @@ def siteRequest(site):
 	except Exception as error:
 		print(error)
 
-
 def reg_responseFromSite(text_parse):
 	p_name = re.search(r'<span class="profileHeader__nameCaption">(.*?)</span>', text_parse).group(1)
 	m_cup = re.search(r'<div class="statistics__metricCounter ui__headerExtraSmall">(.*?)</div>', text_parse).group(1)
@@ -59,11 +58,7 @@ def result():
 	print('Max troféus:', response['cups'])
 	print('Carta favorita:', response['fcard'])
 
-
-
 site = site()
 acess = siteRequest(site)
 response = reg_responseFromSite(acess)
 start = result()
-
-
